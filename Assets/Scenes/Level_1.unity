@@ -402,7 +402,7 @@ Transform:
   m_GameObject: {fileID: 129374395}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -4.32, y: 3.3, z: 0}
+  m_LocalPosition: {x: -3.3, y: 3.86, z: 0}
   m_LocalScale: {x: 8.036142, y: 0.4084, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -794,6 +794,37 @@ Transform:
   - {fileID: 87816834}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &478153499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 478153500}
+  m_Layer: 8
+  m_Name: PlayerLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &478153500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478153499}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.8, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1176975312}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,7 +1181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 617374168}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1166,7 +1197,7 @@ Transform:
   m_GameObject: {fileID: 617374167}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0.8, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1456,37 +1487,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725735694}
   m_CullTransparentMesh: 1
---- !u!1 &778642292
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 778642293}
-  m_Layer: 0
-  m_Name: PlayerLeft
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &778642293
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778642292}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1176975312}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &808208435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1732,7 +1732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994491313}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerFeet
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -1917,7 +1917,7 @@ GameObject:
   - component: {fileID: 1176975317}
   - component: {fileID: 1176975315}
   - component: {fileID: 1176975316}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1933,14 +1933,14 @@ Transform:
   m_GameObject: {fileID: 1176975311}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2, y: -1.84, z: 4}
+  m_LocalPosition: {x: -3.3, y: -2.96, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2135014042}
   - {fileID: 994491313}
-  - {fileID: 778642293}
   - {fileID: 617374168}
+  - {fileID: 478153500}
   m_Father: {fileID: 592296849}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &1176975315
@@ -1990,10 +1990,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99cc0c31c896d0d40906fb324fce583b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkRightArea: {fileID: 617374168}
+  atkLeftArea: {fileID: 478153500}
   dirX: 0
   moveSpeed: 5
   jumpForce: 10
-  multipleJumps: 0
+  multipleJumps: 1
+  attackRange: 0.8
 --- !u!50 &1176975317
 Rigidbody2D:
   serializedVersion: 4
@@ -3187,7 +3190,7 @@ GameObject:
   - component: {fileID: 1805272822}
   - component: {fileID: 1805272821}
   - component: {fileID: 1805272820}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3545,7 +3548,7 @@ GameObject:
   - component: {fileID: 2135014042}
   - component: {fileID: 2135014044}
   - component: {fileID: 2135014043}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

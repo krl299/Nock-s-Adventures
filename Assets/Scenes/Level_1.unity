@@ -1993,7 +1993,7 @@ MonoBehaviour:
   dirX: 0
   moveSpeed: 5
   jumpForce: 10
-  multipleJumps: 2
+  multipleJumps: 0
 --- !u!50 &1176975317
 Rigidbody2D:
   serializedVersion: 4
@@ -3187,7 +3187,7 @@ GameObject:
   - component: {fileID: 1805272822}
   - component: {fileID: 1805272821}
   - component: {fileID: 1805272820}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,0 +1,11 @@
+.vs/
+.vsconfig
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp.csproj
+Library/
+Logs/
+Nock-s-Adventures.sln
+Temp/
+UserSettings/
+obj/
+

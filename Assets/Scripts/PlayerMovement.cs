@@ -12,25 +12,22 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private GameObject feet;
-    [SerializeField]private Transform atkRightArea;
-    [SerializeField]private Transform atkLeftArea;
     private Animator anim;
 
     // Layers
     private LayerMask groundLayer;
     private LayerMask wallLayer;
-    private LayerMask enemyLayer;
 
     // Enums
     private enum movementState { idle, running, jumping, falling }
 
     // Variables
-    [SerializeField] private float dirX;
+    private float dirX;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private int multipleJumps;
     [SerializeField] private static int countJumps = 0;
-    [SerializeField] private float attackRange;
+    
 
     #endregion
 
@@ -43,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         groundLayer = LayerMask.GetMask("Ground");
         wallLayer = LayerMask.GetMask("Wall");
-        enemyLayer = LayerMask.GetMask("Enemy");
 
     }
 
@@ -64,27 +60,21 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (countJumps < (multipleJumps + 1) && countJumps >= 0)
                     countJumps++;
-                Debug.Log(countJumps);
+                Debug.Log("jump " + countJumps);
                 Jump(Vector2.up, multipleJumps);
             }                                   
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Attack();
         }
 
         UpdateAnimationState();
 
     }
 
-   
-
     #region Methods
 
     /// <summary>
     /// Check if the player is on ground or not.
     /// </summary>
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics2D.Raycast(feet.transform.position, Vector2.down, .1f, groundLayer);
     }
@@ -120,34 +110,7 @@ public class PlayerMovement : MonoBehaviour
             countJumps = 0;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    private void Attack()
-    {
-        Collider2D[] hitEnemies;
-
-        anim.SetTrigger("atk 0");
-        if (spriteRenderer.flipX == true)
-            hitEnemies =  Physics2D.OverlapCircleAll(atkRightArea.transform.position
-                + new Vector3(-1.6f, 0, 0) , attackRange, wallLayer);
-        else
-            hitEnemies = Physics2D.OverlapCircleAll(atkRightArea.transform.position,
-                attackRange, wallLayer);
-
-        foreach (Collider2D hit in hitEnemies)
-        {
-            //TODO hit Enemies
-            Debug.Log("we hit enemies");
-        }
-       
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        //Gizmos.DrawWireSphere(atkRightArea.transform.position, attackRange);
-        //Gizmos.DrawWireSphere(atkLeftArea.transform.position, attackRange);
-    }
+    
 
     /// <summary>
     /// Update animations

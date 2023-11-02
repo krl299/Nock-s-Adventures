@@ -5,19 +5,38 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    // Components
+    private Animator anim;
+    [SerializeField] private GameObject target;
+    [SerializeField] private GameObject atkArea;
+
+    // Layers
+    private LayerMask enemyLayer;
+
+    //Variables
     [SerializeField] private int maxHealth = 5;
     public int currentHealth;
+<<<<<<< HEAD
     private SpriteRenderer spriteRenderer;
     private Animator anim;
     [SerializeField] private GameObject rigthAtk;
     [SerializeField] private GameObject leftAtk;
     private LayerMask playerLayer;
+=======
+    private float atkRange;
+    
+
+>>>>>>> 7259ca5dee01f450471d2294aceaa560a58883dd
 
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
+<<<<<<< HEAD
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         playerLayer = GetComponentInChildren<LayerMask>();      
+=======
+        enemyLayer = GetComponentInChildren<LayerMask>();
+>>>>>>> 7259ca5dee01f450471d2294aceaa560a58883dd
     }
 
     // Start is called before the first frame update
@@ -26,6 +45,7 @@ public class EnemyController : MonoBehaviour
         currentHealth = maxHealth;    
     }
 
+<<<<<<< HEAD
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -35,6 +55,34 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+=======
+    private void Update()
+    {
+        if (HasTarget())
+        {
+
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    private bool HasTarget()
+    {
+        return Physics2D.Raycast(atkArea.transform.position, Vector2.left, 0.5f, enemyLayer);
+    }
+    private void OnDrawGizmosSelected()
+    {
+        if (atkArea == null)
+            return;
+        else
+            Gizmos.DrawLine(atkArea.transform.position, new Vector2(-0.5f, 0f));
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="damage"></param>
+>>>>>>> 7259ca5dee01f450471d2294aceaa560a58883dd
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;

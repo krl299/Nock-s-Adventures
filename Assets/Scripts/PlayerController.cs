@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-<<<<<<< HEAD
     [Header("Player Health")]
     public float health = 6;
     private bool canTakeDmg = true;
@@ -68,18 +67,5 @@ public class PlayerController : MonoBehaviour
                 GameManager.gameManager.WinGame();
             }
         }
-=======
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
->>>>>>> 7259ca5dee01f450471d2294aceaa560a58883dd
     }
 }

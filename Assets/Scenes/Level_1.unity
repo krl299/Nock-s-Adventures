@@ -667,7 +667,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327960110}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65b61046173dbcb40943782642cbb9ae, type: 3}
   m_Name: 
@@ -2043,7 +2043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1176975311}
-  atkArea: {fileID: 1834536561}
+  atkArea: {fileID: 0}
   maxHealth: 2
   currentHealth: 1
   rigthAtk: {fileID: 1765992891}

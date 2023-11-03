@@ -10,22 +10,17 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject target;
     [SerializeField] private GameObject atkArea;
 
-    // Layers
-    private LayerMask enemyLayer;
-
     //Variables
     [SerializeField] private int maxHealth = 5;
     public int currentHealth;
     private SpriteRenderer spriteRenderer;
     [SerializeField] private GameObject rigthAtk;
     [SerializeField] private GameObject leftAtk;
-    private LayerMask playerLayer;
 
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        playerLayer = GetComponentInChildren<LayerMask>();
     }
 
     // Start is called before the first frame update
@@ -49,15 +44,6 @@ public class EnemyController : MonoBehaviour
         anim.SetTrigger("hit");
         if (currentHealth <= 0)
             Die();
-
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    private void Attack()
-    {
-        
 
     }
 

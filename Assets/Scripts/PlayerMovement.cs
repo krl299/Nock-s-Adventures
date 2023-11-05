@@ -60,9 +60,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (countJumps < (multipleJumps + 1) && countJumps >= 0)
                     countJumps++;
-                Debug.Log("jump " + countJumps);
                 Jump(Vector2.up, multipleJumps);
-            }                                   
+            }
         }
 
         UpdateAnimationState();
@@ -78,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.Raycast(feet.transform.position, Vector2.down, .1f, groundLayer);
     }
-    
+
     // TODO Jump on walls
     private bool IsOnRightWall()
     {

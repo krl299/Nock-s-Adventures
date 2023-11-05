@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Health")]
-    public float health = 6;
+    public int maxHealth = 8;
+    public int health = 8;
     private bool canTakeDmg = true;
-    [HideInInspector]
     public int pickUps = 0;
 
     [Header("Blink")]
@@ -17,6 +17,12 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = transform.Find("PlayerSprite").GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        if (health > maxHealth)
+            health = maxHealth;
     }
 
     /// <summary>
@@ -30,6 +36,7 @@ public class PlayerController : MonoBehaviour
             health--;
             StartCoroutine(BlinkSprite(4));
             //StartCoroutine(nameof(BlinkSprite), 4)
+            
             if (health <= 0)
             {
                 GameManager.gameManager.LoseGame();
@@ -59,10 +66,10 @@ public class PlayerController : MonoBehaviour
             //Delete the gameobject power up from the hierrarchy game
             Destroy(collision.gameObject);
 
-            //Incremetn number of powerups collected
+            //Increment number of powerups collected
             pickUps++;
 
-            if (pickUps >= GameManager.gameManager.pickUpCount)
+            if (pickUps >= GameManager.gameManager.pickUpCount.Length)
             {
                 GameManager.gameManager.WinGame();
             }

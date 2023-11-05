@@ -4,19 +4,33 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public float lerpTime = 2;
     public GameObject player;
-    private Vector3 offset;
+    private Transform objetive;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        offset = transform.position - player.transform.position;    
+        // Inicialization
+        objetive = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
-    void LateUpdate()
+    private void Start()
     {
-        transform.position = player.transform.position + offset;
+        transform.position += new Vector3(0f, 3f, 0f);
+    }
+
+    private void Update()
+    {
+        FollowObjetive();
+    }
+
+    private void FollowObjetive()
+    {
+        // Lerp position
+        transform.position = new Vector3(
+            Mathf.Lerp(transform.position.x, objetive.position.x, Time.deltaTime * lerpTime),
+            Mathf.Lerp(transform.position.y, objetive.position.y, Time.deltaTime * lerpTime),
+            -10
+            );
     }
 }

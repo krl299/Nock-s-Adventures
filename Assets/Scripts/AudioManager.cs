@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    public AudioSource powerUpAudio;
+    public AudioSource pickUpAudio;
 
     private void Awake()
     {
@@ -25,6 +25,6 @@ public class AudioManager : MonoBehaviour
 
     public void PlayPowerUpSound()
     {
-        powerUpAudio.Play();
+        pickUpAudio.Play();
     }
 }

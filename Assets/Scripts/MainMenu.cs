@@ -7,7 +7,9 @@ public class MainMenu : MonoBehaviour
 {
     private void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+        else if (Input.anyKeyDown)
         {
             // Load next scene
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

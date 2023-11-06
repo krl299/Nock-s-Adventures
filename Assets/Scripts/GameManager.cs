@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         endPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "YOU WIN - POINTS: " + (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().pickUps * 100).ToString("0000");
 
         endPanel.transform.Find("NextLevelButton").gameObject.SetActive(true);
+        endPanel.transform.Find("ExitButton").gameObject.SetActive(true);
 
         // Set time to 0
         Time.timeScale = 0;
@@ -55,8 +56,12 @@ public class GameManager : MonoBehaviour
 
     public void OnClickWinButton()
     {
-        // Load next scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // Load main scene when complete lvl3
+        if (SceneManager.sceneCountInBuildSettings == SceneManager.GetActiveScene().buildIndex)
+            SceneManager.LoadScene(0);
+        else
+            // Load next scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     /// <summary>
@@ -68,6 +73,7 @@ public class GameManager : MonoBehaviour
         endPanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "YOU LOSE - POINTS: " + (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().pickUps * 100).ToString("0000");
 
         endPanel.transform.Find("RetryLevelButton").gameObject.SetActive(true);
+        endPanel.transform.Find("ExitButton").gameObject.SetActive(true);
 
         // Set time to 0
         Time.timeScale = 0;
@@ -77,6 +83,11 @@ public class GameManager : MonoBehaviour
     {
         // Load next scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void OnClickExit()
+    {
+        Application.Quit();
     }
 
     /// <summary>

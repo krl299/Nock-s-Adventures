@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         {
             //Delete the gameobject power up from the hierrarchy game
             Destroy(collision.gameObject);
-
+            AudioManager.instance.PlayPowerUpSound();
             //Increment number of powerups collected
             pickUps++;
 
